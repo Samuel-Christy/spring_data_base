@@ -21,11 +21,11 @@ public class DBInitializeConfig {
 		try {
 			Connection connection = dataSource.getConnection();
 			Statement statement = connection.createStatement();
-			statement.execute(StringsCatalog.DROP_LIVRES);
-			statement.execute(StringsCatalog.DROP_USAGERS);
-
-			statement.executeUpdate(StringsCatalog.CREATE_BOOKS_TABLE_REQUEST);
-			statement.executeUpdate(StringsCatalog.CREATE_USERS_TABLE_REQUEST);
+			// statement.execute(StringsCatalog.DROP_LIVRES);
+			// statement.execute(StringsCatalog.DROP_USAGERS);
+			//
+			// statement.executeUpdate(StringsCatalog.CREATE_BOOKS_TABLE_REQUEST);
+			// statement.executeUpdate(StringsCatalog.CREATE_USERS_TABLE_REQUEST);
 
 			statement.close();
 			connection.close();
