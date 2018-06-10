@@ -10,9 +10,10 @@ import org.springframework.context.annotation.Configuration;
 public class DBConfig {
 	@Bean
 	public DataSource dataSource() {
+		@SuppressWarnings("unchecked")
 		DataSourceBuilder<DataSource> dataSourceBuilder = (DataSourceBuilder<DataSource>) DataSourceBuilder.create();
 		dataSourceBuilder.driverClassName("org.sqlite.JDBC");
-		dataSourceBuilder.url("jdbc:sqlite:mydb.db");
+		dataSourceBuilder.url("jdbc:sqlite:bibliotheque.sqlite");
 		return dataSourceBuilder.build();
 	}
 }

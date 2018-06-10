@@ -3,11 +3,19 @@ package application.beans;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
+@Table(name = "livres")
 public class Livre {
 
 	@Id
@@ -27,6 +35,11 @@ public class Livre {
 	private LocalDate date_sortie;
 
 	private LocalDate date_retour;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "usager_id", nullable = true)
+	@OnDelete(action = OnDeleteAction.CASCADE)
+	private Usager usager;
 
 	/**
 	 * @return the id

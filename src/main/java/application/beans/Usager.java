@@ -1,16 +1,46 @@
 package application.beans;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "usagers")
 public class Usager {
 
-	private int id = -1;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+
 	private String nom;
 
 	private String prenom;
 
-	private List<Livre> livres = new ArrayList<Livre>();
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "usager")
+	private Set<Livre> livres = new HashSet<>();
+
+	/**
+	 * @return the livres
+	 */
+	public Set<Livre> getLivres() {
+		return livres;
+	}
+
+	/**
+	 * @param livres
+	 *            the livres to set
+	 */
+	public void setLivres(Set<Livre> livres) {
+		this.livres = livres;
+	}
 
 	/**
 	 * @return the id
@@ -31,13 +61,6 @@ public class Usager {
 	 */
 	public String getPrenom() {
 		return prenom;
-	}
-
-	/**
-	 * @return the livres
-	 */
-	public List<Livre> getLivres() {
-		return livres;
 	}
 
 	/**
@@ -62,14 +85,6 @@ public class Usager {
 	 */
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
-	}
-
-	/**
-	 * @param livres
-	 *            the livres to set
-	 */
-	public void setLivres(List<Livre> livres) {
-		this.livres = livres;
 	}
 
 }
