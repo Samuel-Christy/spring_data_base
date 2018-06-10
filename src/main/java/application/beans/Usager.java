@@ -1,15 +1,9 @@
 package application.beans;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,30 +18,31 @@ public class Usager {
 
 	private String prenom;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "usager")
-	private Set<Livre> livres = new HashSet<>();
-
-	/**
-	 * @return the livres
-	 */
-	public Set<Livre> getLivres() {
-		return livres;
-	}
-
-	/**
-	 * @param livres
-	 *            the livres to set
-	 */
-	public void setLivres(Set<Livre> livres) {
-		this.livres = livres;
-	}
-
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
-	}
+	// @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy =
+	// "usager")
+	// private Set<Livre> livres = new HashSet<>();
+	//
+	// /**
+	// * @return the livres
+	// */
+	// public Set<Livre> getLivres() {
+	// return livres;
+	// }
+	//
+	// /**
+	// * @param livres
+	// * the livres to set
+	// */
+	// public void setLivres(Set<Livre> livres) {
+	// this.livres = livres;
+	// }
+	//
+	// /**
+	// * @return the id
+	// */
+	// public int getId() {
+	// return id;
+	// }
 
 	/**
 	 * @return the nom

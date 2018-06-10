@@ -9,6 +9,7 @@ import application.repositories.LivreRepository;
 @Service
 public class LivreServiceImpl implements LivreService {
 
+	@SuppressWarnings("unused")
 	private LivreRepository livreRepository;
 
 	/**

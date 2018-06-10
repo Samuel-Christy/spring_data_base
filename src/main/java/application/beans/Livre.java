@@ -42,6 +42,21 @@ public class Livre {
 	private Usager usager;
 
 	/**
+	 * @return the usager
+	 */
+	public Usager getUsager() {
+		return usager;
+	}
+
+	/**
+	 * @param usager
+	 *            the usager to set
+	 */
+	public void setUsager(Usager usager) {
+		this.usager = usager;
+	}
+
+	/**
 	 * @return the id
 	 */
 	public int getId() {

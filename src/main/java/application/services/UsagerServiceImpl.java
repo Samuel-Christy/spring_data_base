@@ -9,6 +9,7 @@ import application.repositories.UsagerRepository;
 @Service
 public class UsagerServiceImpl implements UsagerService {
 
+	@SuppressWarnings("unused")
 	private UsagerRepository usagerRepository;
 
 	/**
