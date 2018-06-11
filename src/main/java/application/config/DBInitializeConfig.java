@@ -1,6 +1,5 @@
 package application.config;
 
-import java.util.Optional;
 import java.util.Random;
 
 import javax.annotation.PostConstruct;
@@ -70,8 +69,11 @@ public class DBInitializeConfig {
 
 		// bind first user to first book :
 
-		Optional<Usager> u = usagerRepository.findById(1);
-		System.err.println(usagerRepository.count());
+		Usager u = usagerRepository.findById(1).get();
+		Livre l = livreRepository.findById(1).get();
+		l.setUsager(u);
+		System.err.println(l.getUsager().getNom());
+		// livreRepository.save(l);
 		// livreRepository.save(l);
 
 		// try {

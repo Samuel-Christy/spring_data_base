@@ -37,7 +37,7 @@ public class Livre {
 	private LocalDate date_retour;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "usager_id", nullable = true)
+	@JoinColumn(name = "usager_id", nullable = true, referencedColumnName = "id")
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	private Usager usager;
 
